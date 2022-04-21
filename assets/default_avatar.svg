@@ -1,0 +1,22 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(31.9982 15.2726) rotate(90) scale(20.3636)">
+            <stop stop-color="white" />
+            <stop offset="1" stop-color="white" stop-opacity="0.54" />
+        </radialGradient>
+        <linearGradient id="paint1_linear" x1="31.9982" y1="37.8184" x2="31.9982" y2="64.0002"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" />
+            <stop offset="1" stop-color="white" stop-opacity="0.62" />
+        </linearGradient>
+    </defs>
+    <path
+        d="M0 32C0 14.3269 14.3269 0 32 0V0C49.6731 0 64 14.3269 64 32V32C64 49.6731 49.6731 64 32 64V64C14.3269 64 0 49.6731 0 32V32Z"
+        fill="#FF5373" />
+    <ellipse cx="31.9982" cy="21.818" rx="10.1818" ry="10.1818" fill="url(#paint0_radial)" />
+    <path
+        d="M58.18 64.0002C58.18 60.5619 57.5028 57.1573 56.1871 53.9808C54.8713 50.8043 52.9428 47.918 50.5116 45.4868C48.0804 43.0556 45.1941 41.1271 42.0176 39.8113C38.841 38.4956 35.4365 37.8184 31.9982 37.8184C28.56 37.8184 25.1554 38.4956 21.9789 39.8113C18.8024 41.1271 15.9161 43.0556 13.4849 45.4868C11.0537 47.918 9.12514 50.8043 7.80938 53.9808C6.49362 57.1574 5.81641 60.5619 5.81641 64.0002L31.9982 64.0002H58.18Z"
+        fill="url(#paint1_linear)" />
+
+</svg>
