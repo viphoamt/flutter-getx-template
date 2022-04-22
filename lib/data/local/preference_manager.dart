@@ -1,7 +1,7 @@
 abstract class PreferenceManager {
-  static const keyToken = "token";
+  static const keyToken = 'token';
 
-  Future<String> getString(String key, {String defaultValue = ""});
+  Future<String> getString(String key, {String defaultValue = ''});
 
   Future<bool> setString(String key, String value);
 
@@ -17,8 +17,10 @@ abstract class PreferenceManager {
 
   Future<bool> setBool(String key, bool value);
 
-  Future<List<String>> getStringList(String key,
-      {List<String> defaultValue = const []});
+  Future<List<String>> getStringList(
+    String key, {
+    List<String> defaultValue = const [],
+  });
 
   Future<bool> setStringList(String key, List<String> value);
 

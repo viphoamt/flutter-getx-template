@@ -5,5 +5,4 @@ class HomeBinding extends Bindings {
   void dependencies() {
     // TODO: implement dependencies
   }
-
 }

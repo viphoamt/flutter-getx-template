@@ -5,7 +5,7 @@ class PreferenceManagerImpl extends PreferenceManager {
   final _preference = SharedPreferences.getInstance();
 
   @override
-  Future<String> getString(String key, {String defaultValue = ""}) {
+  Future<String> getString(String key, {String defaultValue = ''}) {
     return _preference
         .then((preference) => preference.getString(key) ?? defaultValue);
   }
@@ -49,8 +49,10 @@ class PreferenceManagerImpl extends PreferenceManager {
   }
 
   @override
-  Future<List<String>> getStringList(String key,
-      {List<String> defaultValue = const []}) {
+  Future<List<String>> getStringList(
+    String key, {
+    List<String> defaultValue = const [],
+  }) {
     return _preference
         .then((preference) => preference.getStringList(key) ?? defaultValue);
   }
