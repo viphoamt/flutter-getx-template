@@ -5,16 +5,16 @@ import 'package:get/get.dart';
 
 class ThemeController extends GetxController {
   static ThemeController get to => Get.find();
-  final theme = 'system'.obs;
+  final _theme = 'system'.obs;
   final prefs = PreferenceManagerImpl();
   late ThemeMode _themeMode;
 
   ThemeMode get themeMode => _themeMode;
 
-  String get currentTheme => theme.value;
+  String get currentTheme => _theme.value;
 
   Future<void> setThemeMode(String value) async {
-    theme.value = value;
+    _theme.value = value;
     _themeMode = getThemeModeFromString(value);
     Get.changeThemeMode(_themeMode);
     await prefs.setString(AppConstant.themeApp, value);

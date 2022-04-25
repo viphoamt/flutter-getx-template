@@ -4,14 +4,8 @@ import 'package:get/get.dart';
 
 class LoginController extends GetxController {
   static LoginController get to => Get.find();
-  RxBool switchValue = false.obs;
 
   final Repository repository = Get.find();
-
-  void changeValue() {
-    switchValue.value = !switchValue.value;
-    update();
-  }
 
   void login() async {
     final result =

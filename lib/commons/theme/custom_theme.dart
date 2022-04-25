@@ -3,40 +3,34 @@ import 'package:flutter_getx_base/commons/constant/colors.dart';
 
 class CustomTheme {
   static ThemeData get darkTheme {
-    return ThemeData(
+    return ThemeData.dark().copyWith(
       scaffoldBackgroundColor: ColorConstants.darkPrimaryColor,
       appBarTheme: const AppBarTheme(
-        titleTextStyle: TextStyle(
-          color: ColorConstants.lightPrimaryColor,
-          fontFamily: 'Roboto',
-          fontWeight: FontWeight.bold,
-          fontSize: 26,
-        ),
-        color: ColorConstants.lightPrimaryVariantColor,
+        color: ColorConstants.darkPrimaryColor,
         iconTheme: IconThemeData(color: ColorConstants.darkPrimaryColor),
       ),
       colorScheme: const ColorScheme.light(
         primary: ColorConstants.darkPrimaryColor,
-        secondary: ColorConstants.lightSecondaryColor,
+        secondary: ColorConstants.darkPrimaryColor,
       ),
       iconTheme: const IconThemeData(
         color: ColorConstants.lightPrimaryColor,
       ),
       textTheme: _buildTextTheme(ThemeData.dark()),
-      backgroundColor: ColorConstants.darkPrimaryColor,
+      backgroundColor: ColorConstants.lightPrimaryColor,
       dividerTheme: const DividerThemeData(color: Colors.black12),
     );
   }
 
   static ThemeData get lightTheme {
-    return ThemeData(
+    return ThemeData.light().copyWith(
       scaffoldBackgroundColor: ColorConstants.lightPrimaryColor,
       appBarTheme: const AppBarTheme(
         color: ColorConstants.lightPrimaryColor,
         iconTheme: IconThemeData(color: ColorConstants.lightPrimaryColor),
       ),
       colorScheme: const ColorScheme.dark(
-        primary: ColorConstants.darkPrimaryColor,
+        primary: ColorConstants.lightPrimaryColor,
         secondary: ColorConstants.darkPrimaryColor,
       ),
       iconTheme: const IconThemeData(

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_base/commons/utils/styles/text_styles_app.dart';
+import 'package:flutter_getx_base/commons/utils/styles/app_text_style.dart';
 import 'package:flutter_getx_base/core/controllers/theme_controller.dart';
 import 'package:flutter_getx_base/futures/auth/login/login_controller.dart';
 import 'package:flutter_getx_base/widgets/icon/leading_icon.dart';
@@ -20,26 +20,48 @@ class LoginScreen extends StatelessWidget {
           color: Colors.black,
         ),
       ],
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          OutlinedButton(
-            onPressed: controller.getWeather,
-            child: Text(
-              'Login',
-              style: TextStyleApp.bodyText1(),
+      body: Obx(
+        () => Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: controller.getWeather,
+              child: Container(
+                width: 100,
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Get.theme.backgroundColor),
+                ),
+                child: Center(
+                  child: Text(
+                    'language'.tr,
+                    style: AppTextStyle(),
+                  ),
+                ),
+              ),
             ),
-          ),
-          Obx(
-            () => CupertinoSwitch(
-              value: controller.switchValue.value,
-              onChanged: (value) {
-                controller.changeValue();
-                themeController.setThemeMode(value ? 'light' : 'dark');
-              },
+            SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'theme'.tr,
+                  style: AppTextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                CupertinoSwitch(
+                  value: themeController.currentTheme == 'light',
+                  onChanged: (value) {
+                    themeController.isDarkModeOn;
+                    themeController.setThemeMode(value ? 'light' : 'dark');
+                  },
+                ),
+              ],
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
