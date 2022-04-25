@@ -12,7 +12,7 @@ class LocalizationService extends Translations {
 
   // Supported languages
   // Needs to be same order with locales
-  static final List<String> languages = <String>['English', 'Việt Nam'];
+  static final List<String> languages = <String>['English', 'Vietnamese'];
 
   // Supported locales
   // Needs to be same order with languages

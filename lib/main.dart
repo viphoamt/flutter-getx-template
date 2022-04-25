@@ -4,8 +4,8 @@ import 'package:flutter_getx_base/bindings/initial_binding.dart';
 import 'package:flutter_getx_base/commons/theme/custom_theme.dart';
 import 'package:flutter_getx_base/configurations/app_configuration_manager.dart';
 import 'package:flutter_getx_base/configurations/environment_type.dart';
-import 'package:flutter_getx_base/core/controllers/language_controller.dart';
-import 'package:flutter_getx_base/core/controllers/theme_controller.dart';
+import 'package:flutter_getx_base/core/controllers/app_controller.dart';
+import 'package:flutter_getx_base/core/controllers/theme_controller_extension.dart';
 import 'package:flutter_getx_base/route/route_name.dart';
 import 'package:flutter_getx_base/route/route_page.dart';
 import 'package:get/get.dart';
@@ -17,8 +17,7 @@ void main() async {
     environmentType: EnvironmentType.dev,
   );
 
-  Get.lazyPut<ThemeController>(() => ThemeController(), fenix: true);
-  Get.put<LanguageController>(LanguageController());
+  Get.put<AppController>(AppController());
   runApp(const MyApp());
 }
 
@@ -27,7 +26,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeController.to.getThemeModeFromStore();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

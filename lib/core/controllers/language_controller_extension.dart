@@ -1,10 +1,7 @@
+import 'package:flutter_getx_base/core/controllers/app_controller.dart';
 import 'package:flutter_getx_base/localization/localization_service.dart';
-import 'package:get/get.dart';
 
-class LanguageController extends GetxController {
-  static LanguageController get to => Get.find();
-  final languageCode = LocalizationService.languages[0].obs;
-
+extension LanguageControllerExtension on AppController {
   void changeLocale(String? value) {
     if (value != null) {
       languageCode.value = value;

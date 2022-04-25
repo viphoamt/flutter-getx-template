@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_base/commons/utils/styles/app_text_style.dart';
-import 'package:flutter_getx_base/core/controllers/language_controller.dart';
-import 'package:flutter_getx_base/core/controllers/theme_controller.dart';
+import 'package:flutter_getx_base/core/controllers/app_controller.dart';
+import 'package:flutter_getx_base/core/controllers/language_controller_extension.dart';
+import 'package:flutter_getx_base/core/controllers/theme_controller_extension.dart';
 import 'package:flutter_getx_base/futures/auth/login/login_controller.dart';
 import 'package:flutter_getx_base/localization/localization_service.dart';
+import 'package:flutter_getx_base/models/enum/theme_type.dart';
 import 'package:flutter_getx_base/widgets/icon/leading_icon.dart';
 import 'package:flutter_getx_base/widgets/screen_layout.dart';
 import 'package:get/get.dart';
@@ -15,8 +17,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = LoginController.to;
-    final themeController = ThemeController.to;
-    final languageController = LanguageController.to;
+    final appController = AppController.to;
     return ScreenLayout(
       actions: const [
         LeadingIcon(),
@@ -53,17 +54,18 @@ class LoginScreen extends StatelessWidget {
               ),
               Obx(
                 () => CupertinoSwitch(
-                  value: themeController.currentTheme == 'light',
+                  value: appController.theme == ThemeType.light,
                   onChanged: (value) {
-                    themeController.isDarkModeOn;
-                    themeController.setThemeMode(value ? 'light' : 'dark');
+                    appController.isDarkModeOn;
+                    appController
+                        .setThemeMode(value ? ThemeType.light : ThemeType.dark);
                   },
                 ),
               ),
             ],
           ),
           DropdownButton<String>(
-            value: languageController.languageCode.value,
+            value: appController.languageCode.value,
             icon: Icon(
               Icons.arrow_drop_down_sharp,
             ),
@@ -74,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                 child: Text(value),
               );
             }).toList(),
-            onChanged: languageController.changeLocale,
+            onChanged: appController.changeLocale,
           ),
         ],
       ),
