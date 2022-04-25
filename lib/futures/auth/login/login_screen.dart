@@ -60,6 +60,14 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
+            OutlinedButton(
+              onPressed: () => Get.updateLocale(const Locale('en', 'US')),
+              child: Text('english'.tr),
+            ),
+            OutlinedButton(
+              onPressed: () => Get.updateLocale(const Locale('vn', 'VI')),
+              child: Text('vietNam'.tr),
+            ),
           ],
         ),
       ),
