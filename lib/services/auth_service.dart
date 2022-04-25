@@ -16,23 +16,4 @@ class AuthService {
       return false;
     }
   }
-
-  Future<bool> getWeather() async {
-    try {
-      final query = {
-        'access_key': '77a16f4a94779bd6c3652b84df2108e1',
-        'query': 'hanoi'
-      };
-      final result = await apiProvider.get(
-        '/current',
-        params: query,
-      );
-      if (result != null) {
-        return true;
-      }
-      return false;
-    } catch (e) {
-      return false;
-    }
-  }
 }

@@ -26,7 +26,7 @@ class SvgImage extends StatelessWidget {
       height: height,
       width: width,
       fit: fit,
-      color: color,
+      color: color ?? Theme.of(context).iconTheme.color,
       alignment: alignment,
     );
   }

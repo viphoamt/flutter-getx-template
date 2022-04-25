@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import '../network/api_provider.dart';
 import 'environment_configuration.dart';
 import 'environment_configuration_manager.dart';
 import 'environment_type.dart';
@@ -22,6 +23,11 @@ class AppConfigurationManager {
       environmentConfiguration: EnvironmentConfiguration(
         baseUrl: dotenv.env['baseUrl']!,
       ),
+    );
+
+    final apiProvider = ApiProvider();
+    apiProvider.initApiProvider(
+      EnvironmentConfigurationManager.instance.environmentConfiguration.baseUrl,
     );
   }
 }

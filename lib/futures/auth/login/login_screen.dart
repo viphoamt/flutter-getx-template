@@ -19,9 +19,7 @@ class LoginScreen extends StatelessWidget {
     final languageController = LanguageController.to;
     return ScreenLayout(
       actions: const [
-        LeadingIcon(
-          color: Colors.black,
-        ),
+        LeadingIcon(),
       ],
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +66,6 @@ class LoginScreen extends StatelessWidget {
             value: languageController.languageCode.value,
             icon: Icon(
               Icons.arrow_drop_down_sharp,
-              // color: Theme.of(context).iconTheme.color,
             ),
             items: LocalizationService.languages
                 .map<DropdownMenuItem<String>>((String value) {
