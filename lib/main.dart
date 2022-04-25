@@ -11,14 +11,17 @@ import 'package:flutter_getx_base/route/route_name.dart';
 import 'package:flutter_getx_base/route/route_page.dart';
 import 'package:get/get.dart';
 
+import 'localization/localization_service.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppConfigurationManager.configure(
     environmentType: EnvironmentType.dev,
   );
   final apiProvider = ApiProvider();
-  apiProvider.initApiProvider(EnvironmentConfigurationManager
-      .instance.environmentConfiguration.baseUrl);
+  apiProvider.initApiProvider(
+    EnvironmentConfigurationManager.instance.environmentConfiguration.baseUrl,
+  );
   Get.put<ThemeController>(ThemeController());
   runApp(const MyApp());
 }
@@ -39,6 +42,9 @@ class MyApp extends StatelessWidget {
       initialBinding: InitialBinding(),
       initialRoute: RouteName.login,
       enableLog: true,
+      locale: LocalizationService.locale,
+      translations: LocalizationService(),
+      fallbackLocale: LocalizationService.fallbackLocale,
       builder: EasyLoading.init(),
     );
   }

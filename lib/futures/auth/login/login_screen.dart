@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
           OutlinedButton(
             onPressed: controller.getWeather,
             child: Text(
-              'Login',
+              'login'.tr,
               style: TextStyleApp.bodyText1(),
             ),
           ),
@@ -38,7 +38,15 @@ class LoginScreen extends StatelessWidget {
                 themeController.setThemeMode(value ? 'light' : 'dark');
               },
             ),
-          )
+          ),
+          OutlinedButton(
+            onPressed: () => Get.updateLocale(const Locale('en', 'US')),
+            child: Text('english'.tr),
+          ),
+          OutlinedButton(
+            onPressed: () => Get.updateLocale(const Locale('vn', 'VI')),
+            child: Text('vietNam'.tr),
+          ),
         ],
       ),
     );
