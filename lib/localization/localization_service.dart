@@ -12,7 +12,7 @@ class LocalizationService extends Translations {
 
   // Supported languages
   // Needs to be same order with locales
-  static final List<String> languages = <String>['English', 'VietNam'];
+  static final List<String> languages = <String>['English', 'Việt Nam'];
 
   // Supported locales
   // Needs to be same order with languages
@@ -30,13 +30,13 @@ class LocalizationService extends Translations {
       };
 
   // Gets locale from language, and updates the locale
-  void changeLocale(String lang) {
+  static void changeLocale(String lang) {
     final Locale? locale = _getLocaleFromLanguage(lang);
     Get.updateLocale(locale!);
   }
 
   // Finds language in `langs` list and returns it as Locale
-  Locale? _getLocaleFromLanguage(String lang) {
+  static Locale? _getLocaleFromLanguage(String lang) {
     for (int i = 0; i < languages.length; i++) {
       if (lang == languages[i]) {
         return locales[i];

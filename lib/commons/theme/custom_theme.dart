@@ -9,10 +9,6 @@ class CustomTheme {
         color: ColorConstants.darkPrimaryColor,
         iconTheme: IconThemeData(color: ColorConstants.darkPrimaryColor),
       ),
-      colorScheme: const ColorScheme.light(
-        primary: ColorConstants.darkPrimaryColor,
-        secondary: ColorConstants.darkPrimaryColor,
-      ),
       iconTheme: const IconThemeData(
         color: ColorConstants.lightPrimaryColor,
       ),
@@ -28,10 +24,6 @@ class CustomTheme {
       appBarTheme: const AppBarTheme(
         color: ColorConstants.lightPrimaryColor,
         iconTheme: IconThemeData(color: ColorConstants.lightPrimaryColor),
-      ),
-      colorScheme: const ColorScheme.dark(
-        primary: ColorConstants.lightPrimaryColor,
-        secondary: ColorConstants.darkPrimaryColor,
       ),
       iconTheme: const IconThemeData(
         color: ColorConstants.darkPrimaryColor,
