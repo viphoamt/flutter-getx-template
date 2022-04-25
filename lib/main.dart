@@ -20,8 +20,9 @@ void main() async {
     environmentType: EnvironmentType.dev,
   );
   final apiProvider = ApiProvider();
-  apiProvider.initApiProvider(EnvironmentConfigurationManager
-      .instance.environmentConfiguration.baseUrl,);
+  apiProvider.initApiProvider(
+    EnvironmentConfigurationManager.instance.environmentConfiguration.baseUrl,
+  );
   Get.lazyPut<ThemeController>(() => ThemeController(), fenix: true);
   Get.put<LanguageController>(LanguageController());
   runApp(const MyApp());
