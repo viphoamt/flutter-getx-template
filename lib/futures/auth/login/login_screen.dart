@@ -5,8 +5,9 @@ import 'package:flutter_getx_base/core/controllers/app_controller.dart';
 import 'package:flutter_getx_base/core/controllers/language_controller_extension.dart';
 import 'package:flutter_getx_base/core/controllers/theme_controller_extension.dart';
 import 'package:flutter_getx_base/futures/auth/login/login_controller.dart';
-import 'package:flutter_getx_base/localization/localization_service.dart';
+import 'package:flutter_getx_base/models/enum/language_type.dart';
 import 'package:flutter_getx_base/models/enum/theme_type.dart';
+import 'package:flutter_getx_base/widgets/button.dart';
 import 'package:flutter_getx_base/widgets/icon/leading_icon.dart';
 import 'package:flutter_getx_base/widgets/screen_layout.dart';
 import 'package:get/get.dart';
@@ -25,21 +26,10 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          InkWell(
-            onTap: controller.getWeather,
-            child: Container(
-              width: 100,
-              height: 40,
-              decoration: BoxDecoration(
-                border: Border.all(color: Theme.of(context).backgroundColor),
-              ),
-              child: Center(
-                child: Text(
-                  'language'.tr,
-                  style: AppTextStyle(),
-                ),
-              ),
-            ),
+          Button(
+            title: 'language'.tr,
+            onPressed: controller.getWeather,
+            width: 150.0,
           ),
           SizedBox(height: 15),
           Row(
@@ -64,20 +54,25 @@ class LoginScreen extends StatelessWidget {
               ),
             ],
           ),
-          DropdownButton<String>(
+          DropdownButton<LanguageType>(
             value: appController.languageCode.value,
             icon: Icon(
               Icons.arrow_drop_down_sharp,
             ),
-            items: LocalizationService.languages
-                .map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
+            items: LanguageType.values
+                .map<DropdownMenuItem<LanguageType>>((LanguageType value) {
+              return DropdownMenuItem<LanguageType>(
                 value: value,
-                child: Text(value),
+                child: Text(value.translatedName),
               );
             }).toList(),
             onChanged: appController.changeLocale,
           ),
+          SizedBox(height: 15),
+          Button(
+            title: 'Click here',
+            onPressed: () => {},
+          )
         ],
       ),
     );

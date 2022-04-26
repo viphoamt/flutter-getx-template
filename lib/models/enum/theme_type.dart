@@ -10,11 +10,11 @@ extension ThemeTypeExtension on ThemeType {
     }
   }
 
-  static ThemeType parseLanguageCode(String type) {
+  static ThemeType parseThemeType(String type) {
     switch (type) {
-      case 'en':
+      case 'light':
         return ThemeType.light;
-      case 'vi':
+      case 'dark':
         return ThemeType.dark;
       default:
         return ThemeType.light;
