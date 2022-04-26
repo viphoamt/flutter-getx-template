@@ -25,7 +25,6 @@ class AppConfigurationManager {
       ),
     );
 
-    final apiProvider = ApiProvider();
     apiProvider.initApiProvider(
       EnvironmentConfigurationManager.instance.environmentConfiguration.baseUrl,
     );

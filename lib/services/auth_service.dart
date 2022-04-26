@@ -12,7 +12,6 @@ class AuthService {
       }
       return false;
     } catch (e) {
-      print(e.toString());
       return false;
     }
   }

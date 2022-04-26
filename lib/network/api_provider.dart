@@ -5,6 +5,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_getx_base/data/local/preference_manager.dart';
 import 'package:flutter_getx_base/data/local/preference_manager_impl.dart';
 
+final apiProvider = ApiProvider();
+
 class ApiProvider {
   late Dio dio;
   CancelToken cancelToken = CancelToken();

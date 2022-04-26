@@ -31,20 +31,20 @@ class LoginScreen extends StatelessWidget {
             onPressed: controller.getWeather,
             width: 150.0,
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'theme'.tr,
-                style: AppTextStyle(
+                style: const AppTextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Obx(
                 () => CupertinoSwitch(
-                  value: appController.theme == ThemeType.light,
+                  value: appController.theme.value == ThemeType.light,
                   onChanged: (value) {
                     appController.isDarkModeOn;
                     appController
@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
           ),
           DropdownButton<LanguageType>(
             value: appController.languageCode.value,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_drop_down_sharp,
             ),
             items: LanguageType.values
@@ -68,7 +68,7 @@ class LoginScreen extends StatelessWidget {
             }).toList(),
             onChanged: appController.changeLocale,
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Button(
             title: 'Click here',
             onPressed: () => {},

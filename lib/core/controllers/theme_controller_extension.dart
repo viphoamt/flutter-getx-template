@@ -31,7 +31,7 @@ extension ThemeControllerExtension on AppController {
 
   // checks whether darkmode is set via system or previously by user
   bool get isDarkModeOn {
-    if (theme == ThemeType.dark) {
+    if (theme.value == ThemeType.dark) {
       return true;
     }
     return false;
