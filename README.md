@@ -8,6 +8,21 @@ Generate JSON serialization: "flutter pub run build_runner watch --delete-confli
 
 Format: "flutter format ."
 
+## App Directory Structure
+- configurations: define environments of the app
+- commons/constants: define color constants, icon constants, animation time constants...
+- commons/theme: define theme app
+- commons/utils: define date_time, styles,..e
+- core: contain controller and binding app
+- features: contain code for specified features
+- localization: define texts used in the app
+- models: contain shared models
+- services: define services that should be mapped with our backend.
+  (more about services will be explained in App Architecture section)
+- data: contain repository and local store
+- network: define base api request
+- widgets: contain reusable widgets.
+
 ## Coding Conventions
 Order of code statements inside a class
    properties

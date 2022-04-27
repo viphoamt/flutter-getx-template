@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_getx_base/bindings/initial_binding.dart';
 import 'package:flutter_getx_base/commons/theme/custom_theme.dart';
 import 'package:flutter_getx_base/configurations/app_configuration_manager.dart';
 import 'package:flutter_getx_base/configurations/environment_type.dart';
@@ -9,6 +8,7 @@ import 'package:flutter_getx_base/route/route_name.dart';
 import 'package:flutter_getx_base/route/route_page.dart';
 import 'package:get/get.dart';
 
+import 'core/bindings/initial_binding.dart';
 import 'localization/localization_service.dart';
 
 void main() async {
