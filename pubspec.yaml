@@ -20,17 +20,22 @@ dependencies:
   flutter_svg: ^1.0.3
   get: ^4.6.1
   dio: ^4.0.6
+  graphql: ^5.1.1
+  equatable: ^2.0.5
   cookie_jar: ^3.0.1
   dio_cookie_manager: ^2.0.0
   shared_preferences: ^2.0.13
   cached_network_image: ^3.2.0
   flutter_easyloading: ^3.0.0
+  json_annotation: ^4.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^1.0.0
+  build_runner: ^2.0.0
+  json_serializable: ^6.0.0
 
 flutter:
 

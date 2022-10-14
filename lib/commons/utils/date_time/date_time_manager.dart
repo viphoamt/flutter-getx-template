@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_base/commons/constant/date_time_format_pattern_constants.dart';
+import 'package:flutter_getx_base/commons/constant/date_time_format_pattern.dart';
 import 'package:intl/intl.dart';
 
 class DateTimeUtilities {
@@ -15,28 +15,28 @@ class DateTimeUtilities {
   }
 
   static DateTime parseBirthDay(String birthDay) {
-    return DateFormat(DateTimeFormatPatternConstants.pattern1).parse(birthDay);
+    return DateFormat(DateTimeFormatPattern.pattern1).parse(birthDay);
   }
 
   static String formatBirthDay(DateTime birthDay) {
-    return DateFormat(DateTimeFormatPatternConstants.pattern1).format(birthDay);
+    return DateFormat(DateTimeFormatPattern.pattern1).format(birthDay);
   }
 
   static String formatToDisplay(DateTime date) {
-    return DateFormat(DateTimeFormatPatternConstants.pattern2).format(date);
+    return DateFormat(DateTimeFormatPattern.pattern2).format(date);
   }
 
   static String formatToSendToBackEnd(DateTime date) {
-    return DateFormat(DateTimeFormatPatternConstants.pattern1).format(date);
+    return DateFormat(DateTimeFormatPattern.pattern1).format(date);
   }
 
   ///https://github.com/dart-lang/intl/issues/183
   static String formatToDisplayPattern3(DateTime date) {
-    return '${DateFormat(DateTimeFormatPatternConstants.pattern5).format(date).toLowerCase()}・${formatToDisplayPattern4(date)}';
+    return '${DateFormat(DateTimeFormatPattern.pattern5).format(date).toLowerCase()}・${formatToDisplayPattern4(date)}';
   }
 
   static String formatToDisplayPattern4(DateTime date) {
-    return DateFormat(DateTimeFormatPatternConstants.pattern4).format(date);
+    return DateFormat(DateTimeFormatPattern.pattern4).format(date);
   }
 
   static String formatHHMMSS(int seconds) {

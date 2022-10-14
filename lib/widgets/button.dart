@@ -5,17 +5,17 @@ class Button extends StatelessWidget {
   final String title;
   final Function() onPressed;
   final Color? color;
-  final bool isLarge;
   final bool isDisable;
   final double? width;
+  final double? height;
 
   const Button({
     Key? key,
     required this.title,
     required this.onPressed,
     this.width,
+    this.height,
     this.color,
-    this.isLarge = false,
     this.isDisable = true,
   }) : super(key: key);
 
@@ -25,10 +25,10 @@ class Button extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: width,
-        margin: const EdgeInsets.symmetric(horizontal: kPaddingHorizontal16),
-        height: isLarge ? kHeightLargeButton : kHeightDefaultButton,
+        margin: EdgeInsets.symmetric(horizontal: Dimensions.height10),
+        height: height,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kRadiusButton),
+          borderRadius: BorderRadius.circular(Dimensions.radius8),
           border: Border.all(color: Theme.of(context).backgroundColor),
         ),
         child: Center(

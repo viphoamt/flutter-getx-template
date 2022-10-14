@@ -1,7 +1,8 @@
 import 'package:flutter_getx_base/commons/constant/index.dart';
 import 'package:flutter_getx_base/core/controllers/app_controller.dart';
 import 'package:flutter_getx_base/localization/localization_service.dart';
-import 'package:flutter_getx_base/models/enum/language_type.dart';
+
+import '../../data/models/enum/language_type.dart';
 
 extension LanguageControllerExtension on AppController {
   void getSavedLanguageCode() async {

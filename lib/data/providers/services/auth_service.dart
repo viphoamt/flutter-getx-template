@@ -1,5 +1,5 @@
-import 'package:flutter_getx_base/network/api_provider.dart';
-import 'package:flutter_getx_base/services/endpoint/endpoint.dart';
+import '../network/api_provider.dart';
+import 'endpoint/endpoint.dart';
 
 class AuthService {
   ApiProvider apiProvider = ApiProvider();

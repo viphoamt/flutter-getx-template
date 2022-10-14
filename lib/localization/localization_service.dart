@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter_getx_base/localization/vn_vi.dart';
-import 'package:flutter_getx_base/models/enum/language_type.dart';
 import 'package:get/get.dart';
+import '../data/models/enum/language_type.dart';
 import 'en_us.dart';
 
 class LocalizationService extends Translations {

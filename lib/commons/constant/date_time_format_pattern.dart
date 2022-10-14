@@ -1,4 +1,4 @@
-class DateTimeFormatPatternConstants {
+class DateTimeFormatPattern {
   static const pattern1 = 'yyyy-MM-dd'; // (is used to send to BE)
   static const pattern2 = 'MMMM dd, yyyy';
   static const dayOfYear = 365;

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_base/commons/constant/app_constant.dart';
-import 'package:flutter_getx_base/core/controllers/app_controller.dart';
-import 'package:flutter_getx_base/models/enum/theme_type.dart';
 import 'package:get/get.dart';
+
+import '../../commons/constant/app_constant.dart';
+import '../../data/models/enum/theme_type.dart';
+import 'app_controller.dart';
 
 extension ThemeControllerExtension on AppController {
   Future<void> setThemeMode(ThemeType value) async {

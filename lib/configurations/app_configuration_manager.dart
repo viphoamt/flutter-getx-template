@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import '../network/api_provider.dart';
+import '../data/providers/network/api_provider.dart';
 import 'environment_configuration.dart';
 import 'environment_configuration_manager.dart';
 import 'environment_type.dart';
